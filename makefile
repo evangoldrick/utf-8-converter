@@ -1,7 +1,21 @@
-main: main.o
-	gcc -g -o main main.o
-main.o: main.c
-	gcc -c -g main.c
+CC = gcc
+
+all: cpToHex hexToCp
+
+cpToHex: cpToHex.o hexConversions.o
+	$(CC) -g -o cpToHex cpToHex.o hexConversions.o
+
+hexToCp: hexToCp.o hexConversions.o
+	$(CC) -g -o hexToCp hexToCp.o hexConversions.o
+
+cpToHex.o: cpToHex.c
+	$(CC) -c -g cpToHex.c
+
+hexToCp.o: hexToCp.c
+	$(CC) -c -g hexToCp.c
+
+hexConversions.o: hexConversions.c
+	$(CC) -c -g hexConversions.c
 
 clean:
-	rm *.o main
+	rm *.o cpToHex hexToCp
