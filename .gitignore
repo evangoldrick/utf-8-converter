@@ -1,2 +1,3 @@
-main
+cpToHex
+hexToCp
 *.o
