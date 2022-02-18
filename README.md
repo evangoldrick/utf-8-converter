@@ -5,5 +5,8 @@ A program which can convert between code points and utf-8 encoded values
 $ main code_point
 
 example:
+```bash
 $ main A2
+
 \\xC2\\xA2
+```
